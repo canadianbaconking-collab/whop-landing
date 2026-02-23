@@ -10,9 +10,14 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/whop" element={<WhopPage />} />
-        {/* Redirect root to /whop for convenience in this preview */}
-        <Route path="*" element={<Navigate to="/whop" replace />} />
+        {/* Serve landing page at root */}
+        <Route path="/" element={<WhopPage />} />
+        
+        {/* Redirect legacy /whop route to root */}
+        <Route path="/whop" element={<Navigate to="/" replace />} />
+        
+        {/* Redirect any unknown routes to root */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
