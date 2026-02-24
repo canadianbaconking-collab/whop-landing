@@ -83,13 +83,6 @@ export default function WhopPage() {
             <p className="text-lg sm:text-xl text-zinc-400 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
               A fixed-scope install that makes new members 'get it' fast, reduces support drag, and creates a repeatable weekly cadence.
             </p>
-
-            {/* Scope Boundary Pill */}
-            <div className="mb-10">
-              <span className="inline-block px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg text-sm font-mono text-indigo-300">
-                Fixed scope (7 days): I install your onboarding + retention loop (messages, structure, nudges, tracking). Anything beyond is a new tranche.
-              </span>
-            </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
@@ -253,6 +246,13 @@ export default function WhopPage() {
               <h3 className="font-medium text-zinc-200 mb-2 text-lg">Operator handoff doc</h3>
               <p className="text-sm text-zinc-500 leading-relaxed">The exact playbook for your team to run the loop. Includes all templates, routing rules, and maintenance schedules to ensure the system keeps working long after the install.</p>
             </div>
+          </div>
+
+          {/* Scope Boundary Pill */}
+          <div className="mt-12 text-center">
+            <span className="inline-block px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg text-sm font-mono text-indigo-300">
+              Fixed scope (7 days): I install your onboarding + retention loop (messages, structure, nudges, tracking). Anything beyond is a new tranche.
+            </span>
           </div>
         </motion.section>
 
