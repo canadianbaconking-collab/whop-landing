@@ -40,19 +40,19 @@ export default function WhopPage() {
               Accepting new installs
             </div>
 
-            {/* Scope Boundary Pill */}
-            <div className="mb-8">
-              <span className="inline-block px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-md text-xs font-mono text-indigo-300 uppercase tracking-wider">
-                Scope boundary: 7-day install only; anything beyond is a new tranche.
-              </span>
-            </div>
-
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
               Onboarding + retention loop <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">installed in 7 days.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-400 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-zinc-400 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
               A fixed-scope install that makes new members 'get it' fast, reduces support drag, and creates a repeatable weekly cadence.
             </p>
+
+            {/* Scope Boundary Pill */}
+            <div className="mb-10">
+              <span className="inline-block px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg text-sm font-mono text-indigo-300">
+                Fixed scope (7 days): I install your onboarding + retention loop (messages, structure, nudges, tracking). Anything beyond is a new tranche.
+              </span>
+            </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
@@ -206,28 +206,6 @@ export default function WhopPage() {
               <p className="text-sm text-zinc-500 leading-relaxed">The exact playbook for your team to run the loop. Includes all templates, routing rules, and maintenance schedules to ensure the system keeps working long after the install.</p>
             </div>
           </div>
-        </motion.section>
-
-        {/* Mid-page CTA Row */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-32"
-        >
-          <a 
-            href="mailto:hello@frostedlogic.com?subject=MAP" 
-            className="w-full sm:w-auto px-8 py-4 bg-zinc-100 text-zinc-900 rounded-xl font-medium hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-lg shadow-white/5"
-          >
-            Reply MAP
-            <ArrowRight className="w-4 h-4" />
-          </a>
-          <a 
-            href="{{BOOKING_URL}}" 
-            className="w-full sm:w-auto px-8 py-4 bg-zinc-900/80 text-zinc-100 border border-zinc-800 rounded-xl font-medium hover:bg-zinc-800 transition-colors flex items-center justify-center shadow-sm backdrop-blur-sm"
-          >
-            Book a 12-min fit check
-          </a>
         </motion.section>
 
         {/* 5) CTA Footer */}
