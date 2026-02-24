@@ -1,6 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, Calendar, MessageSquare, Map, Zap, ShieldAlert, BarChart3, BookOpen } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Calendar, MessageSquare, Map, Zap, ShieldAlert, BarChart3, BookOpen, ChevronDown } from 'lucide-react';
+
+function DeliverablesAccordion({ items }: { items: React.ReactNode[] }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="mt-3">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded px-1 -ml-1 py-0.5"
+        aria-expanded={isOpen}
+      >
+        Deliverables
+        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      <div 
+        className={`grid transition-all duration-200 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0 mt-0'}`}
+      >
+        <div className="overflow-hidden">
+          <ul className="space-y-1.5 text-sm text-zinc-500 list-disc pl-4 marker:text-zinc-700">
+            {items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const loopNodes = [
+  { label: 'JOIN', icon: Zap, color: 'indigo' },
+  { label: 'ORIENTED', icon: Map, color: 'zinc' },
+  { label: 'FIRST WIN', icon: CheckCircle2, color: 'emerald' },
+  { label: 'ROUTED', icon: ArrowRight, color: 'zinc' },
+  { label: 'WEEKLY CADENCE', icon: Calendar, color: 'zinc' },
+  { label: 'RE-ENGAGE', icon: MessageSquare, color: 'zinc' },
+  { label: 'RETAINED', icon: ShieldAlert, color: 'emerald' },
+];
 
 export default function WhopPage() {
   return (
@@ -106,42 +143,34 @@ export default function WhopPage() {
             </div>
             
             {/* Placeholder SVG for Loop Map */}
-            <div className="w-full aspect-[16/9] sm:aspect-[21/9] bg-zinc-950 rounded-2xl border border-zinc-800/80 flex items-center justify-center relative overflow-hidden mb-12 shadow-inner">
+            <div className="w-full aspect-auto py-12 sm:py-16 bg-zinc-950 rounded-2xl border border-zinc-800/80 flex items-center justify-center relative overflow-hidden mb-12 shadow-inner">
               {/* Abstract diagram representation */}
               <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
               
-              <div className="flex items-center justify-between w-full max-w-3xl px-8 relative z-10">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-sm">
-                    <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </div>
-                  <span className="text-[10px] sm:text-xs font-medium text-zinc-500 uppercase tracking-wider">Join</span>
-                </div>
-                
-                <div className="flex-1 h-px bg-gradient-to-r from-indigo-500/30 via-zinc-700 to-emerald-500/30 mx-2 sm:mx-4 relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 py-1 sm:px-3 sm:py-1 bg-zinc-950 border border-zinc-800 rounded-full text-[8px] sm:text-[10px] text-zinc-400 whitespace-nowrap shadow-sm">
-                    Onboarding Sequence
-                  </div>
-                </div>
-                
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-300 shadow-sm">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </div>
-                  <span className="text-[10px] sm:text-xs font-medium text-zinc-500 uppercase tracking-wider text-center">Aha Moment</span>
-                </div>
-                
-                <div className="flex-1 h-px bg-gradient-to-r from-zinc-700 to-emerald-500/30 mx-2 sm:mx-4 relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 py-1 sm:px-3 sm:py-1 bg-zinc-950 border border-zinc-800 rounded-full text-[8px] sm:text-[10px] text-zinc-400 whitespace-nowrap shadow-sm">
-                    Retention Loop
-                  </div>
-                </div>
-                
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-sm">
-                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </div>
-                  <span className="text-[10px] sm:text-xs font-medium text-zinc-500 uppercase tracking-wider">Retained</span>
+              <div className="w-full overflow-x-auto px-6 sm:px-12 relative z-10 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                <div className="flex items-center justify-between min-w-[700px] w-full gap-2 mx-auto">
+                  {loopNodes.map((node, i) => (
+                    <React.Fragment key={i}>
+                      <div className="flex flex-col items-center gap-3 shrink-0 w-20">
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-sm ${
+                          node.color === 'indigo' ? 'bg-indigo-500/20 border border-indigo-500/30 text-indigo-400' :
+                          node.color === 'emerald' ? 'bg-emerald-500/20 border border-emerald-500/30 text-emerald-400' :
+                          'bg-zinc-800 border border-zinc-700 text-zinc-300'
+                        }`}>
+                          <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </div>
+                        <span className="text-[9px] sm:text-[10px] font-medium text-zinc-500 uppercase tracking-wider text-center leading-tight">
+                          {node.label}
+                        </span>
+                      </div>
+                      
+                      {i < loopNodes.length - 1 && (
+                        <div className="flex-1 h-px bg-zinc-800 relative min-w-[20px]">
+                          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-0 h-0 border-t-[3px] border-t-transparent border-l-[4px] border-l-zinc-700 border-b-[3px] border-b-transparent" />
+                        </div>
+                      )}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </div>
@@ -151,17 +180,36 @@ export default function WhopPage() {
               <div className="flex flex-col">
                 <span className="text-sm font-mono text-indigo-400 mb-2">01 / Day 1</span>
                 <h3 className="font-medium text-zinc-200 mb-1">Audit & Map</h3>
-                <p className="text-sm text-zinc-500">We map your current flow and identify the friction points.</p>
+                <p className="text-sm text-zinc-500 mb-2">We map your current flow and identify the friction points.</p>
+                <p className="text-xs text-zinc-600 italic">Inputs: invite + current onboarding copy + your ‘Aha’ action + top support questions.</p>
+                <DeliverablesAccordion items={[
+                  "Inventory: current onboarding messages + channel/role routing",
+                  "“Aha” definition: what a new member must do in week 1",
+                  "Loop map before → after (1 page)",
+                  "Draft: Day 0 / Day 1 / Day 3 message sequence"
+                ]} />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-mono text-zinc-400 mb-2">02 / Day 3</span>
                 <h3 className="font-medium text-zinc-200 mb-1">Build & Install</h3>
                 <p className="text-sm text-zinc-500">Sequences, routing, and deflection kits are implemented.</p>
+                <DeliverablesAccordion items={[
+                  "Day 0/1/3 onboarding messages installed + linked to “Start here”",
+                  "Routing: channels/roles pinned + reduced confusion paths",
+                  "Support deflection: FAQ + canned replies/macros live",
+                  "Weekly cadence: value drop + inactivity nudge(s) configured"
+                ]} />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-mono text-emerald-400 mb-2">03 / Day 7</span>
                 <h3 className="font-medium text-zinc-200 mb-1">Handoff & Launch</h3>
                 <p className="text-sm text-zinc-500">Operator doc delivered. The new loop goes live.</p>
+                <DeliverablesAccordion items={[
+                  "Operator handoff doc (how to run it weekly)",
+                  "Tracking sheet + Day-7 checkpoint notes",
+                  "“What to watch” metrics (activation + support drag signals)",
+                  <span key="opt">Next tranche suggestions <em className="text-zinc-600">(optional; clearly separate)</em></span>
+                ]} />
               </div>
             </div>
           </div>
