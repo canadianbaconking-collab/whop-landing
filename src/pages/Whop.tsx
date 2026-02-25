@@ -66,23 +66,39 @@ export default function WhopPage() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 sm:py-32">
         
         {/* 1) Hero */}
-        <header className="text-center max-w-3xl mx-auto mb-24">
+        <header className="relative text-center max-w-3xl mx-auto mb-24">
+          {/* Byline / Brand Stamp */}
+          <div className="absolute -top-12 right-0 sm:-right-12 text-[10px] sm:text-xs font-mono text-zinc-600 uppercase tracking-widest">
+            by Frosted//Logic
+          </div>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/50 border border-zinc-800/50 text-sm text-zinc-400 mb-6 shadow-sm backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/50 border border-zinc-800/50 text-sm text-zinc-400 mb-8 shadow-sm backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               Accepting new installs
+            </div>
+
+            {/* Eyebrow */}
+            <div className="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">
+              Online communities
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
               Onboarding + retention loop <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">installed in 7 days.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-400 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
+            
+            <p className="text-lg sm:text-xl text-zinc-400 mb-4 leading-relaxed max-w-2xl mx-auto font-medium">
               A fixed-scope install that makes new members 'get it' fast, reduces support drag, and creates a repeatable weekly cadence.
             </p>
+
+            {/* Platform Microline */}
+            <div className="text-xs font-mono text-zinc-600 mb-10">
+              Discord • Telegram • other community hubs
+            </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
