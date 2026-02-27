@@ -88,12 +88,8 @@ export default function WhopPage() {
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
-              48-hour onboarding kickstart. <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install.</span>
+              Onboarding and Retention System
             </h1>
-
-            <p className="text-lg sm:text-xl text-zinc-400 mb-4 leading-relaxed max-w-2xl mx-auto font-medium">
-              Fix "I joined… now what?" with a Start Here funnel, a first win, and a weekly cadence — no hype.
-            </p>
 
             {/* Platform Microline */}
             <div className="text-xs font-mono text-zinc-600 mb-10">
@@ -102,7 +98,7 @@ export default function WhopPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="mailto:hello@frostedlogic.com?subject=Fit%20Check"
+                href="/fit-check"
                 className="w-full sm:w-auto px-8 py-4 bg-zinc-100 text-zinc-900 rounded-xl font-medium hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-lg shadow-white/5"
               >
                 Book 12-min Fit Check
@@ -147,7 +143,7 @@ export default function WhopPage() {
         >
           <div className="bg-zinc-900/40 border border-zinc-800/50 rounded-3xl p-8 sm:p-12 backdrop-blur-md shadow-xl shadow-black/20">
             <div className="mb-12 text-center">
-              <h2 className="text-2xl font-medium mb-4 text-zinc-100">The Loop Map</h2>
+              <h2 className="text-2xl font-medium mb-4 text-zinc-100">New Member Journey</h2>
               <p className="text-zinc-500">Visualizing the member journey from Day 0 to retained.</p>
             </div>
 
