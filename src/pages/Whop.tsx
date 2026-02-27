@@ -88,8 +88,7 @@ export default function WhopPage() {
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
-              48-hour onboarding kickstart.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install.</span>
+              48-hour onboarding kickstart. <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-zinc-400 mb-4 leading-relaxed max-w-2xl mx-auto font-medium">
