@@ -84,20 +84,21 @@ export default function WhopPage() {
 
             {/* Eyebrow */}
             <div className="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">
-              Online communities
+              ONLINE COMMUNITIES
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
-              48-hour onboarding patch + <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install for paid communities.</span>
+              48-hour onboarding patch.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-zinc-400 mb-4 leading-relaxed max-w-2xl mx-auto font-medium">
-              Turn 'I joined… now what?' into a clear Start Here path, a first win, a weekly cadence, and fewer repeat questions — without hype or performance promises.
+              Fix "I joined… now what?" with a Start Here funnel, a first win, and a weekly cadence — no hype.
             </p>
 
             {/* Platform Microline */}
             <div className="text-xs font-mono text-zinc-600 mb-10">
-              Discord / Whop / paid communities (gaming + creator). Trading/picks: compliance-safe onboarding + refund/dispute friction reduction (no returns talk).
+              Discord • Whop • paid communities. Trading/picks: process-only + refund/dispute friction.
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -162,8 +163,8 @@ export default function WhopPage() {
                     <React.Fragment key={i}>
                       <div className="flex flex-col items-center gap-3 shrink-0 w-20">
                         <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-sm ${node.color === 'indigo' ? 'bg-indigo-500/20 border border-indigo-500/30 text-indigo-400' :
-                            node.color === 'emerald' ? 'bg-emerald-500/20 border border-emerald-500/30 text-emerald-400' :
-                              'bg-zinc-800 border border-zinc-700 text-zinc-300'
+                          node.color === 'emerald' ? 'bg-emerald-500/20 border border-emerald-500/30 text-emerald-400' :
+                            'bg-zinc-800 border border-zinc-700 text-zinc-300'
                           }`}>
                           <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
