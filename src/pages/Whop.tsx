@@ -6,7 +6,7 @@ function DeliverablesAccordion({ items }: { items: React.ReactNode[] }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="mt-3">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded px-1 -ml-1 py-0.5"
         aria-expanded={isOpen}
@@ -14,7 +14,7 @@ function DeliverablesAccordion({ items }: { items: React.ReactNode[] }) {
         Deliverables
         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      <div 
+      <div
         className={`grid transition-all duration-200 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0 mt-0'}`}
       >
         <div className="overflow-hidden">
@@ -46,9 +46,9 @@ export default function WhopPage() {
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Base Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
-        
+
         {/* SVG Noise Overlay */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.02]"
           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
         />
@@ -64,7 +64,7 @@ export default function WhopPage() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 sm:py-32">
-        
+
         {/* 1) Hero */}
         <header className="relative text-center max-w-3xl mx-auto mb-24">
           {/* Byline / Brand Stamp */}
@@ -72,7 +72,7 @@ export default function WhopPage() {
             by Frosted//Logic
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -88,45 +88,45 @@ export default function WhopPage() {
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
-              Onboarding + retention loop <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">installed in 7 days.</span>
+              48-hour onboarding patch + <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install for paid communities.</span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl text-zinc-400 mb-4 leading-relaxed max-w-2xl mx-auto font-medium">
-              A fixed-scope install that makes new members 'get it' fast, reduces support drag, and creates a repeatable weekly cadence.
+              Turn 'I joined… now what?' into a clear Start Here path, a first win, a weekly cadence, and fewer repeat questions — without hype or performance promises.
             </p>
 
             {/* Platform Microline */}
             <div className="text-xs font-mono text-zinc-600 mb-10">
-              Discord • Telegram • other community hubs
+              Discord / Whop / paid communities (gaming + creator). Trading/picks: compliance-safe onboarding + refund/dispute friction reduction (no returns talk).
             </div>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a 
-                href="mailto:hello@frostedlogic.com?subject=MAP" 
+              <a
+                href="mailto:hello@frostedlogic.com?subject=Fit%20Check"
                 className="w-full sm:w-auto px-8 py-4 bg-zinc-100 text-zinc-900 rounded-xl font-medium hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-lg shadow-white/5"
               >
-                Reply MAP
+                Book 12-min Fit Check
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a 
-                href="{{BOOKING_URL}}" 
+              <a
+                href="#what-you-get"
                 className="w-full sm:w-auto px-8 py-4 bg-zinc-900/80 text-zinc-100 border border-zinc-800 rounded-xl font-medium hover:bg-zinc-800 transition-colors flex items-center justify-center shadow-sm backdrop-blur-sm"
               >
-                Book a 12-min fit check
+                See what you get
               </a>
             </div>
           </motion.div>
         </header>
 
         {/* 4) Walkthrough */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="flex justify-center mb-24"
         >
-          <a 
-            href="{{WALKTHROUGH_URL}}" 
+          <a
+            href="{{WALKTHROUGH_URL}}"
             className="group flex items-center gap-3 px-6 py-4 bg-zinc-900/40 border border-zinc-800/50 rounded-2xl hover:bg-zinc-900/60 transition-all backdrop-blur-md shadow-sm"
           >
             <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform text-zinc-300">
@@ -139,7 +139,7 @@ export default function WhopPage() {
         </motion.div>
 
         {/* 3) Proof / Visual section */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -150,29 +150,28 @@ export default function WhopPage() {
               <h2 className="text-2xl font-medium mb-4 text-zinc-100">The Loop Map</h2>
               <p className="text-zinc-500">Visualizing the member journey from Day 0 to retained.</p>
             </div>
-            
+
             {/* Placeholder SVG for Loop Map */}
             <div className="w-full aspect-auto py-12 sm:py-16 bg-zinc-950 rounded-2xl border border-zinc-800/80 flex items-center justify-center relative overflow-hidden mb-12 shadow-inner">
               {/* Abstract diagram representation */}
               <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-              
+
               <div className="w-full overflow-x-auto px-6 sm:px-12 relative z-10 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                 <div className="flex items-center justify-between min-w-[700px] w-full gap-2 mx-auto">
                   {loopNodes.map((node, i) => (
                     <React.Fragment key={i}>
                       <div className="flex flex-col items-center gap-3 shrink-0 w-20">
-                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-sm ${
-                          node.color === 'indigo' ? 'bg-indigo-500/20 border border-indigo-500/30 text-indigo-400' :
-                          node.color === 'emerald' ? 'bg-emerald-500/20 border border-emerald-500/30 text-emerald-400' :
-                          'bg-zinc-800 border border-zinc-700 text-zinc-300'
-                        }`}>
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-sm ${node.color === 'indigo' ? 'bg-indigo-500/20 border border-indigo-500/30 text-indigo-400' :
+                            node.color === 'emerald' ? 'bg-emerald-500/20 border border-emerald-500/30 text-emerald-400' :
+                              'bg-zinc-800 border border-zinc-700 text-zinc-300'
+                          }`}>
                           <node.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <span className="text-[9px] sm:text-[10px] font-medium text-zinc-500 uppercase tracking-wider text-center leading-tight">
                           {node.label}
                         </span>
                       </div>
-                      
+
                       {i < loopNodes.length - 1 && (
                         <div className="flex-1 h-px bg-zinc-800 relative min-w-[20px]">
                           <div className="absolute top-1/2 right-0 -translate-y-1/2 w-0 h-0 border-t-[3px] border-t-transparent border-l-[4px] border-l-zinc-700 border-b-[3px] border-b-transparent" />
@@ -192,10 +191,10 @@ export default function WhopPage() {
                 <p className="text-sm text-zinc-500 mb-2">We map your current flow and identify the friction points.</p>
                 <p className="text-xs text-zinc-600 italic">Inputs: invite + current onboarding copy + your ‘Aha’ action + top support questions.</p>
                 <DeliverablesAccordion items={[
-                  "Inventory: current onboarding messages + channel/role routing",
-                  "“Aha” definition: what a new member must do in week 1",
-                  "Loop map before → after (1 page)",
-                  "Draft: Day 0 / Day 1 / Day 3 message sequence"
+                  "First Win definition + Start Here funnel draft",
+                  "Routing rule (where questions go)",
+                  "Baseline snapshot (activation proxy or support-load proxy)",
+                  "If Dispute Shield: Access Confirmed shipped Day 1"
                 ]} />
               </div>
               <div className="flex flex-col">
@@ -203,10 +202,9 @@ export default function WhopPage() {
                 <h3 className="font-medium text-zinc-200 mb-1">Build & Install</h3>
                 <p className="text-sm text-zinc-500">Sequences, routing, and deflection kits are implemented.</p>
                 <DeliverablesAccordion items={[
-                  "Day 0/1/3 onboarding messages installed + linked to “Start here”",
-                  "Routing: channels/roles pinned + reduced confusion paths",
-                  "Support deflection: FAQ + canned replies/macros live",
-                  "Weekly cadence: value drop + inactivity nudge(s) configured"
+                  "Message pack drafted (Day 0/1/3)",
+                  "Cadence board draft + weekly recap template",
+                  "Macros v1 + FAQ starter"
                 ]} />
               </div>
               <div className="flex flex-col">
@@ -214,10 +212,10 @@ export default function WhopPage() {
                 <h3 className="font-medium text-zinc-200 mb-1">Handoff & Launch</h3>
                 <p className="text-sm text-zinc-500">Operator doc delivered. The new loop goes live.</p>
                 <DeliverablesAccordion items={[
-                  "Operator handoff doc (how to run it weekly)",
-                  "Tracking sheet + Day-7 checkpoint notes",
-                  "“What to watch” metrics (activation + support drag signals)",
-                  <span key="opt">Next tranche suggestions <em className="text-zinc-600">(optional; clearly separate)</em></span>
+                  "Final publish/pin + QA pass",
+                  "Weekly cadence + inactivity nudges finalized",
+                  "Tracking sheet + operator checklist",
+                  "Handoff doc (what exists, where it lives, how to run it)"
                 ]} />
               </div>
             </div>
@@ -225,25 +223,24 @@ export default function WhopPage() {
         </motion.section>
 
         {/* 2) "What you get" */}
-        <motion.section 
+        <motion.section
+          id="what-you-get"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-24"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-medium mb-4 text-zinc-100 drop-shadow-sm">What you get</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium mb-4 text-zinc-100 drop-shadow-sm">You'll receive a system you can see.</h2>
             <p className="text-zinc-400 font-medium">Everything needed to reduce churn and increase week-1 activation — installed for you.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
             {[
-              { icon: Map, title: "Loop map", desc: "Before/after visualization of your member journey." },
-              { icon: MessageSquare, title: "Day 0/1/3 sequence", desc: "Automated onboarding messages installed and tested." },
-              { icon: Calendar, title: "Weekly value drop", desc: "Plus inactivity nudges to re-engage slipping members." },
-              { icon: Zap, title: "\"Start here\" structure", desc: "Clear routing for channels and roles to reduce confusion." },
-              { icon: ShieldAlert, title: "Support deflection kit", desc: "FAQ + canned replies/macros to reduce support drag." },
-              { icon: BarChart3, title: "Simple tracking", desc: "Day-7 checkpoint to measure onboarding success." },
+              { icon: Zap, title: "Start Here funnel", desc: "Pinned instructions to orient members immediately." },
+              { icon: Calendar, title: "Cadence board", desc: "Weekly rhythm and recap templates." },
+              { icon: ShieldAlert, title: "Support hub", desc: "Routing rules and macro replies." },
+              { icon: MessageSquare, title: "Message pack", desc: "Day 0/1/3 + weekly + inactivity messages." }
             ].map((feature, i) => (
               <div key={i} className="bg-zinc-900/30 border border-zinc-800/50 rounded-2xl p-6 hover:bg-zinc-900/50 transition-colors backdrop-blur-md shadow-lg shadow-black/10">
                 <feature.icon className="w-6 h-6 text-zinc-400 mb-4" />
@@ -252,7 +249,7 @@ export default function WhopPage() {
               </div>
             ))}
           </div>
-          
+
           {/* Full-width row for Operator handoff doc */}
           <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-2xl p-6 sm:p-8 hover:bg-zinc-900/50 transition-colors backdrop-blur-md shadow-lg shadow-black/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="w-12 h-12 rounded-xl bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center shrink-0">
@@ -260,43 +257,132 @@ export default function WhopPage() {
             </div>
             <div>
               <h3 className="font-medium text-zinc-200 mb-2 text-lg">Operator handoff doc</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">The exact playbook for your team to run the loop. Includes all templates, routing rules, and maintenance schedules to ensure the system keeps working long after the install.</p>
+              <p className="text-sm text-zinc-500 leading-relaxed">Run it in &lt;30 min/week. The exact playbook for your team to run the loop. Includes all templates, routing rules, and maintenance schedules to ensure the system keeps working long after the install.</p>
             </div>
-          </div>
-
-          {/* Scope Boundary Pill */}
-          <div className="mt-12 text-center">
-            <span className="inline-block px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg text-sm font-mono text-indigo-300">
-              Fixed scope (7 days): I install your onboarding + retention loop (messages, structure, nudges, tracking). Anything beyond is a new tranche.
-            </span>
           </div>
         </motion.section>
 
-        {/* 5) CTA Footer */}
-        <motion.section 
+        {/* 3) Offers Section */}
+        <motion.section
+          id="offers"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="mb-24"
         >
-          <h2 className="text-3xl font-medium mb-8 text-zinc-100 drop-shadow-sm">Ready to fix your retention?</h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <a 
-              href="mailto:hello@frostedlogic.com?subject=MAP" 
-              className="w-full sm:w-auto px-8 py-4 bg-zinc-100 text-zinc-900 rounded-xl font-medium hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-lg shadow-white/5"
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-2xl p-8 hover:bg-zinc-900/50 transition-colors backdrop-blur-md flex flex-col h-full shadow-lg shadow-black/10">
+              <div className="mb-6">
+                <h3 className="text-xl font-medium text-zinc-100 mb-2">48-Hour Onboarding Patch</h3>
+                <p className="text-zinc-400 text-sm font-medium">$99 — delivered in 48 hours</p>
+              </div>
+              <ul className="space-y-3 text-sm text-zinc-400 mb-8 flex-1">
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Start Here funnel (3 steps): orient → personalize → first win</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>First Win definition + how you'll verify it happened</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Day 0 + Day 1 messages (paste-ready)</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Support relief starter: routing rule + 5 macro replies</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>60-second walkthrough script (record in one take)</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Micro tracking sheet (activation + support-load proxy)</span></li>
+              </ul>
+              <div className="pt-6 border-t border-zinc-800/50 mt-auto">
+                <p className="text-xs text-indigo-400 mb-4">Upgrade credit: upgrade within 7 days and the $99 is credited.</p>
+                <a href="#fit-check" className="w-full py-3 bg-zinc-100 text-zinc-900 rounded-lg font-medium hover:bg-white transition-colors flex items-center justify-center">Book 12-min Fit Check</a>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-indigo-500/10 border border-indigo-500/30 rounded-2xl p-8 hover:bg-indigo-500/20 transition-colors backdrop-blur-md flex flex-col h-full shadow-lg shadow-black/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 px-3 py-1 bg-indigo-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-bl-lg">Most Popular</div>
+              <div className="mb-6">
+                <h3 className="text-xl font-medium text-zinc-100 mb-2">Lifecycle OS Install</h3>
+                <p className="text-indigo-300 text-sm font-medium">$300 — delivered in 7 days</p>
+              </div>
+              <ul className="space-y-3 text-sm text-zinc-300 mb-8 flex-1">
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>Install Charter (first win, segments, boundaries)</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>Final Start Here funnel + routing rules</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>60-second walkthrough (script or recorded)</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>Message pack: Day 0 / Day 1 / Day 3 / weekly cadence / inactivity nudges</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>4-week cadence board + weekly recap template</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>Support relief system: 8–12 macros + FAQ starter</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>Simple tracking sheet + weekly operator checklist</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-indigo-400" /><span>Implementation + QA + operator handoff doc</span></li>
+              </ul>
+              <div className="pt-6 border-t border-indigo-500/20 mt-auto">
+                <a href="#fit-check" className="w-full py-3 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 transition-colors flex items-center justify-center">Book 12-min Fit Check</a>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-2xl p-8 hover:bg-zinc-900/50 transition-colors backdrop-blur-md flex flex-col h-full shadow-lg shadow-black/10">
+              <div className="mb-6">
+                <h3 className="text-xl font-medium text-zinc-100 mb-2">Dispute Risk Shield</h3>
+                <p className="text-zinc-400 text-sm font-medium">$500 — delivered in 7 days</p>
+                <div className="mt-2 text-xs text-rose-400/80 font-medium">For trading/picks + high refund/dispute risk memberships</div>
+              </div>
+              <ul className="space-y-3 text-sm text-zinc-400 mb-8 flex-1">
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Everything in Lifecycle OS, plus:</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Day 1 "Access Confirmed" flow (kills "I paid, now what?")</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Cancel/refund clarity pack (how to cancel + what happens next)</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Expectation-setting language pack (compliance-safe)</span></li>
+                <li className="flex gap-2 items-start"><CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" /><span>Dispute-prevention macros + Week 1 escalation routing</span></li>
+              </ul>
+              <div className="pt-6 border-t border-zinc-800/50 mt-auto">
+                <a href="#fit-check" className="w-full py-3 bg-zinc-100 text-zinc-900 rounded-lg font-medium hover:bg-white transition-colors flex items-center justify-center">Book 12-min Fit Check</a>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* FAQ Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto mb-24"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-medium mb-4 text-zinc-100 drop-shadow-sm">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              { q: "Is this just Discord setup?", a: "No — it's a lifecycle system. We structure the journey, not just the channels." },
+              { q: "Do you guarantee retention or revenue?", a: "No. We install systems. Outcomes vary based on your product quality and market." },
+              { q: "Do you need admin access?", a: "Usually yes, to install and test the automation loops properly." },
+              { q: "Can I start with the $99 Patch first?", a: "Yes. The $99 is credited if you upgrade to the Lifecycle OS within 7 days." },
+              { q: "Trading/picks — do you talk about returns?", a: "No. We focus on process-only onboarding (Access Confirmed, cancel clarity) to reduce dispute risk." },
+            ].map((faq, i) => (
+              <div key={i} className="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-6 backdrop-blur-md text-left">
+                <h3 className="font-medium text-zinc-100 mb-2">{faq.q}</h3>
+                <p className="text-sm text-zinc-400">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* 6) CTA / Booking Section */}
+        <motion.section
+          id="fit-check"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-2xl mx-auto mb-16 bg-zinc-900/40 border border-zinc-800/50 p-8 sm:p-12 rounded-3xl backdrop-blur-md shadow-xl shadow-black/20"
+        >
+          <h2 className="text-3xl font-medium mb-6 text-zinc-100 drop-shadow-sm">Let's check if there's a fit.</h2>
+          <p className="text-lg text-zinc-400 mb-8 max-w-md mx-auto">
+            12 minutes → recommended option + start window + the 3 inputs I need.
+          </p>
+          <div className="flex justify-center mb-6">
+            <a
+              href="#" // TODO: Add scheduler link
+              className="w-full sm:w-auto px-10 py-5 bg-zinc-100 text-zinc-900 rounded-xl font-medium hover:bg-white transition-colors flex items-center justify-center shadow-lg shadow-white/5 text-lg"
             >
-              Reply MAP
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <a 
-              href="{{BOOKING_URL}}" 
-              className="w-full sm:w-auto px-8 py-4 bg-zinc-900/80 text-zinc-100 border border-zinc-800 rounded-xl font-medium hover:bg-zinc-800 transition-colors flex items-center justify-center shadow-sm backdrop-blur-sm"
-            >
-              Book a 12-min fit check
+              Book 12-min Fit Check
             </a>
           </div>
           <p className="text-sm text-zinc-500 font-medium">
-            If you reply 'MAP', I'll send the 1-page loop map + the Day 0/1/3 message sequence.
+            No times available? Email <a href="mailto:hello@frostedlogic.com?subject=Fit%20Check" className="text-indigo-400 hover:text-indigo-300 transition-colors">hello@frostedlogic.com</a>
           </p>
         </motion.section>
 
