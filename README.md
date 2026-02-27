@@ -19,25 +19,16 @@ A modern, polished, and confident landing page for the FrostedLogic /whop produc
 - Lucide React Icons
 - Vite
 
-## Development
+## Testing & Deployment
 
-To run the project locally:
+This project uses **Cloudflare Pages** for automated deployment directly from the `deploy` codebase.
 
-1. Install dependencies:
+1. **Local Pre-flight Tests**
    ```bash
-   npm install
-   ```
-
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Build for production:
-   ```bash
+   npm i
    npm run build
    ```
+   *Make sure `dist` builds successfully without Vite errors before committing.*
 
-## Deployment
-
-The application is built as a static site. You can deploy the contents of the `dist` directory to any static hosting provider (Vercel, Netlify, GitHub Pages, etc.).
+2. **Automated Deployment**
+   Push changes to the correct deployment branch in GitHub and Cloudflare Pages will automatically trigger a new deployment. No Firebase Hosting or CLI pushes required.

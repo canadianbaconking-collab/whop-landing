@@ -88,7 +88,7 @@ export default function WhopPage() {
             </div>
 
             <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
-              48-hour onboarding patch.<br />
+              48-hour onboarding kickstart.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">7-day lifecycle install.</span>
             </h1>
 
@@ -98,7 +98,7 @@ export default function WhopPage() {
 
             {/* Platform Microline */}
             <div className="text-xs font-mono text-zinc-600 mb-10">
-              Discord • Whop • paid communities. Trading/picks: process-only + refund/dispute friction.
+              Discord • Whop • paid communities.
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
