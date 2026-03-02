@@ -87,7 +87,7 @@ export default function WhopPage() {
               ONLINE COMMUNITIES
             </div>
 
-            <h1 className="text-5xl sm:text-7xl font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
+            <h1 className="text-[clamp(48px,12vw,120px)] sm:text-[180px] font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
               Onboarding and Retention System
             </h1>
 
@@ -378,7 +378,7 @@ export default function WhopPage() {
             </a>
           </div>
           <p className="text-sm text-zinc-500 font-medium">
-            No times available? Email <a href="mailto:hello@frostedlogic.com?subject=Fit%20Check" className="text-indigo-400 hover:text-indigo-300 transition-colors">hello@frostedlogic.com</a>
+            No times available? Email <a href="mailto:rmcmillan5@gmail.com?subject=Fit%20Check" className="text-indigo-400 hover:text-indigo-300 transition-colors">rmcmillan5@gmail.com</a>
           </p>
         </motion.section>
 
