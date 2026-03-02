@@ -87,7 +87,7 @@ export default function WhopPage() {
               ONLINE COMMUNITIES
             </div>
 
-            <h1 className="text-[clamp(48px,12vw,120px)] sm:text-[180px] font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
+            <h1 className="text-[clamp(24px,6vw,60px)] sm:text-[90px] font-medium tracking-tight mb-8 leading-[1.1] text-zinc-50 drop-shadow-sm">
               Onboarding and Retention System
             </h1>
 
