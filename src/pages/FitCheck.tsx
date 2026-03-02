@@ -6,12 +6,15 @@ export default function FitCheckPage() {
     const [formData, setFormData] = useState({
         name: '',
         communityLink: '',
+        platform: '',
+        memberCount: '',
+        paidOrFree: '',
         biggestIssue: '',
     });
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const mailtoLink = `mailto:rmcmillan5@gmail.com?subject=Fit Check&body=Name: ${encodeURIComponent(formData.name)}%0ACommunity Link: ${encodeURIComponent(formData.communityLink)}%0ABiggest Issue: ${encodeURIComponent(formData.biggestIssue)}`;
+        const mailtoLink = `mailto:rmcmillan5@gmail.com?subject=Fit Check&body=Name: ${encodeURIComponent(formData.name)}%0ACommunity Link: ${encodeURIComponent(formData.communityLink)}%0APlatform: ${encodeURIComponent(formData.platform)}%0AMember count: ${encodeURIComponent(formData.memberCount)}%0APaid or free: ${encodeURIComponent(formData.paidOrFree)}%0ABiggest Issue: ${encodeURIComponent(formData.biggestIssue)}`;
         window.location.href = mailtoLink;
     };
 
@@ -79,6 +82,80 @@ export default function FitCheckPage() {
                                 value={formData.communityLink}
                                 onChange={(e) => setFormData({ ...formData, communityLink: e.target.value })}
                             />
+                        </div>
+
+                        <div className="space-y-2">
+                            <label htmlFor="platform" className="block text-sm font-medium text-zinc-300">
+                                Platform
+                            </label>
+                            <div className="relative">
+                                <select
+                                    id="platform"
+                                    required
+                                    className="w-full bg-zinc-950/50 border border-zinc-800 rounded-xl px-4 py-3 text-zinc-100 appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all font-medium"
+                                    value={formData.platform}
+                                    onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
+                                >
+                                    <option value="" disabled hidden>Select platform...</option>
+                                    <option value="Discord">Discord</option>
+                                    <option value="Whop">Whop</option>
+                                    <option value="Circle">Circle</option>
+                                    <option value="Skool">Skool</option>
+                                    <option value="Patreon">Patreon</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-zinc-500">
+                                    <ChevronDown className="w-4 h-4" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label htmlFor="memberCount" className="block text-sm font-medium text-zinc-300">
+                                Member count
+                            </label>
+                            <div className="relative">
+                                <select
+                                    id="memberCount"
+                                    required
+                                    className="w-full bg-zinc-950/50 border border-zinc-800 rounded-xl px-4 py-3 text-zinc-100 appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all font-medium"
+                                    value={formData.memberCount}
+                                    onChange={(e) => setFormData({ ...formData, memberCount: e.target.value })}
+                                >
+                                    <option value="" disabled hidden>Select member count...</option>
+                                    <option value="0–100">0–100</option>
+                                    <option value="100–500">100–500</option>
+                                    <option value="500–2k">500–2k</option>
+                                    <option value="2k–10k">2k–10k</option>
+                                    <option value="10k+">10k+</option>
+                                </select>
+                                <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-zinc-500">
+                                    <ChevronDown className="w-4 h-4" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label htmlFor="paidOrFree" className="block text-sm font-medium text-zinc-300">
+                                Paid or free
+                            </label>
+                            <div className="relative">
+                                <select
+                                    id="paidOrFree"
+                                    required
+                                    className="w-full bg-zinc-950/50 border border-zinc-800 rounded-xl px-4 py-3 text-zinc-100 appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all font-medium"
+                                    value={formData.paidOrFree}
+                                    onChange={(e) => setFormData({ ...formData, paidOrFree: e.target.value })}
+                                >
+                                    <option value="" disabled hidden>Select type...</option>
+                                    <option value="Paid">Paid</option>
+                                    <option value="Free">Free</option>
+                                    <option value="Mixed">Mixed</option>
+                                </select>
+                                <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-zinc-500">
+                                    <ChevronDown className="w-4 h-4" />
+                                </div>
+                            </div>
                         </div>
 
                         <div className="space-y-2">
