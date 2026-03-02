@@ -11,7 +11,7 @@ export default function FitCheckPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const mailtoLink = `mailto:hello@frostedlogic.com?subject=Fit Check&body=Name: ${encodeURIComponent(formData.name)}%0ACommunity Link: ${encodeURIComponent(formData.communityLink)}%0ABiggest Issue: ${encodeURIComponent(formData.biggestIssue)}`;
+        const mailtoLink = `mailto:rmcmillan5@gmail.com?subject=Fit Check&body=Name: ${encodeURIComponent(formData.name)}%0ACommunity Link: ${encodeURIComponent(formData.communityLink)}%0ABiggest Issue: ${encodeURIComponent(formData.biggestIssue)}`;
         window.location.href = mailtoLink;
     };
 
